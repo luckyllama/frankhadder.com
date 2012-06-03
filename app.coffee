@@ -5,7 +5,10 @@ assets = require 'connect-assets'
 app = express.createServer()
 app.use assets()
 app.set 'view engine', 'jade'
+app.use express.static "#{__dirname}/public"
 
-app.get '/', (req, resp) -> resp.render 'index'
+app.get '/', (req, res) -> res.render 'index'
+app.get '/resume/simple', (req, res) -> res.render 'resume/simple'
+app.get '/resume/interactive', (req, res) -> res.render 'resume/interactive'
 
 app.listen process.env.VMC_APP_PORT or 3001, -> console.log 'Listening...'
