@@ -5,7 +5,7 @@
 // [if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]
 head
   meta(charset='utf-8')
-  title Frank Hadder
+  title frank hadder
   meta(name='description', content='')
   meta(name='author', content='')
   // Mobile Specific
@@ -14,18 +14,21 @@ head
   // CSS
   != css('bootstrap.min.css')
   != css('app')
+  link(href="http://fonts.googleapis.com/css?family=Metrophobic",rel="stylesheet",type="text/css")
   
 body
   .container
     != body
 
-    footer
+  footer
+    .container
       .copyright.pull-left 
-        p Copyright &copy; 2012 - frank hadder
-
+        - var currentYear = new Date().getFullYear()
+        | Copyright &copy; #{currentYear} - frank hadder
+        span 
+          a(href="https://github.com/luckyllama/frankhadder.com") view code
       .links.pull-right
-        p.btn-group
-          a(class='twitter btn',href='http://twitter.com/luckyllamas'): span twitter
+        .btn-group
           a(class='github btn',href='http://github.com/luckyllama'): span github
           a(class='stackoverflow btn',href='http://careers.stackoverflow.com/cv/employer/123'): span stackoverflow
 

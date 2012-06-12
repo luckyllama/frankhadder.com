@@ -1,21 +1,75 @@
 @import 'nib'
 
+body 
+    font 16px/22px 'Metrophobic', Tahoma, sans-serif
+    border-top 12px solid #1FBF5F
+
+p 
+    font-size inherit
+
 .container
-  margin-top 60px
+    margin-top 30px
 
 .home
     .summary
         text-align justify
 
+.resume-simple
+    h1 
+        font-size 56px
+        font-weight normal
+        line-height 1.5em
+        span 
+            font-size 44px
+            color #888
+    h2
+        font-size 28px
+        font-weight normal
+        color #1FBF5F
+    h3 
+        font-size 24px
+        font-weight normal
+    .job, .school
+        margin-bottom 24px
+
+        .where, .dates
+            line-height 2.2
+        .where
+            float left
+        .dates
+            float right
+        p, ul
+            clear both
+            padding-top 6px
+        .summary 
+            padding 12px 18px
+            background #eee
+            text-align justify
+            margin-top .5em
+        .projects
+            h4
+                font-size 20px
+                font-weight normal
+                line-height 2.2em
+            p
+                padding-left 24px;
+
 footer 
-    margin-top 10px
-    
+    background #333
+    color #ccc
+    margin-top 12px
+    font-size 14px
+
+    .container
+        padding 12px 0
+
     .copyright
-        color #666
         line-height 20px
+        span
+            margin-left 12px
     
     .links
-        width 30%
+        width 22%
 
         a
             height 20px
