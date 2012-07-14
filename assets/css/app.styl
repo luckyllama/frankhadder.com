@@ -57,6 +57,41 @@ h1, h2, h3, h4, h5, h6
             p
                 padding-left 24px;
 
+.sudoku
+    .board
+        border solid 1px #666
+        display inline-block
+
+        .row 
+            border-bottom solid 1px #ccc
+            height 70px
+            margin 0
+        .row.C, .row.F
+            border-bottom solid 1px #666
+
+        .col
+            border-left solid 1px #ccc
+            display inline-block
+            height 100%
+            width 70px
+            vertical-align top
+
+            .value
+                font-size 60px
+                text-align center
+                line-height 70px
+        .col-3, .col-6
+            border-right solid 1px #666
+
+        .candidates
+            span 
+                text-align center
+                display inline-block
+                width 33%
+                height 33%
+                font-size 12px
+                color #999
+
 footer 
     background #333
     color #ccc
