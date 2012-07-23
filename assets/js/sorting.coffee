@@ -256,7 +256,7 @@
       svg = document.createElementNS svgNS, "svg"
       svg.setAttribute "version", "1.2"
       svg.setAttribute "baseProfile", "tiny"
-      svg.setAttribute "style", "width: #{$el.width()}; height: #{$el.height()}"
+      svg.setAttribute "style", "width: #{$el.width()}px; height: #{$el.height()}px"
 
       stepWidth = $el.width() / logs.length
       lineDistance = $el.height() / logs[0].length
