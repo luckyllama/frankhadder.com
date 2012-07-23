@@ -8,7 +8,7 @@
     .x-axis 40%
     .x-axis 60%
     .x-axis 80%
-    .total-steps Solved in <span></span> steps.
+    .total-steps Logged <span></span> steps.
     .current-array
 
   .controls
@@ -20,5 +20,16 @@
       a.btn quicksort
 
 .about
+  :markdown
+    ## Sorting Visualizations
+    Inspired by [sortvis.org](http://sortvis.org), these visualizations create an interesting way to view various sorting
+    algorithms at work. Each algorithm saves a snapshot of the list during their sorting loops and then those logs are 
+    shown line by line with SVG graphics. 
+
+    Most algorithms were copied from either [sortvis.org](http://sortvis.org) or 
+    [Rosetta Code](http://rosettacode.org/wiki/Sorting_algorithms).
+
+    You can view all the coffeescript code on [github](https://github.com/luckyllama/frankhadder.com/blob/master/assets/js/sorting.coffee). 
+    
 
 != js('sorting')

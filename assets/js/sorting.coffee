@@ -160,24 +160,6 @@
       super(initList)
       log = [initList]
     solve: ->
-    #   public T[] Sort(T[] list) {
-    #     int k;
-    #     T temp;
- 
-    #     for (int i = 0; i < list.Length; i++) {
-    #         k = i;
-    #         for (int j=i + 1; j < list.Length; j++) {
-    #             if (list[j].CompareTo(list[k]) < 0) {
-    #                 k = j;
-    #             }
-    #         }
-    #         temp = list[i];
-    #         list[i] = list[k];
-    #         list[k] = temp;
-    #     }
- 
-    #     return list;
-    # }
       list = @initList.slice()
       for i in [0..list.length - 1]
         k = i
@@ -214,6 +196,7 @@
       $(".facts .total-steps span", @$el).text logs.length
       return
 
+  # The canvas display isn't currently used because it's easier to create onhover effects in svg.
   class CanvasDisplay
     toFullColorHex = (hex) -> "#11#{hex}#{hex}"
     constructor: ($el, logs) ->
@@ -278,6 +261,7 @@
       stepWidth = $el.width() / logs.length
       lineDistance = $el.height() / logs[0].length
 
+      # create background grid at each step with onhover effects
       grid = document.createElementNS svgNS, "g"
       for logIndex in [0..logs.length-1]
         rect = document.createElementNS svgNS, "rect"
@@ -300,6 +284,7 @@
         grid.appendChild rect
       svg.appendChild grid
 
+      # create all lines from logs
       lines = document.createElementNS svgNS, "g"
       for logIndex in [-1..logs.length-1]
         log = logs[logIndex+1] if logIndex is -1
@@ -311,12 +296,12 @@
           currentElementIndex = log.indexOf(elementIndex)
           nextElementIndex = nextLog.indexOf(elementIndex)
           
-          strokeStyle = toFullColorHex(Math.floor(elementIndex / log.length * 255).toString(16))
           line = document.createElementNS svgNS, "line"
           line.setAttribute "x1", logIndex * stepWidth
           line.setAttribute "y1", lineDistance * (currentElementIndex) + (lineDistance / 2)
           line.setAttribute "x2", (logIndex + 1) * stepWidth
           line.setAttribute "y2", lineDistance * (nextElementIndex) + (lineDistance / 2)
+          strokeStyle = toFullColorHex(Math.floor(elementIndex / log.length * 255).toString(16))
           line.setAttribute "style", "stroke: #{strokeStyle}; stroke-width: 5;"
           lines.appendChild line
       svg.appendChild lines
