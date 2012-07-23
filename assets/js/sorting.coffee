@@ -286,9 +286,8 @@
 
       # create all lines from logs
       lines = document.createElementNS svgNS, "g"
-      for logIndex in [-1..logs.length-1]
-        log = logs[logIndex+1] if logIndex is -1
-        log = logs[logIndex] if logIndex > -1
+      for logIndex in [0..logs.length-1]
+        log = logs[logIndex]
         nextLog = logs[logIndex+1] if logIndex < logs.length-1
         nextLog = logs[logIndex] if logIndex is logs.length-1
 
