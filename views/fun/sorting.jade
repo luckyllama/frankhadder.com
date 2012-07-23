@@ -8,6 +8,7 @@
     .x-axis 40%
     .x-axis 60%
     .x-axis 80%
+    .init-list Initial list: <span></span>
     .total-steps Logged <span></span> steps.
     .current-array
 
@@ -23,13 +24,14 @@
   :markdown
     ## Sorting Visualizations
     Inspired by [sortvis.org](http://sortvis.org), these visualizations create an interesting way to view various sorting
-    algorithms at work. Each algorithm saves a snapshot of the list during their sorting loops and then those logs are 
-    shown line by line with SVG graphics. 
+    algorithms at work. For instance, you can compare the calm swapping of bubblesort with the mass confusion beginning of 
+    the heapsort algorithm. Each algorithm saves a snapshot of the list during their sorting loops and then those logs are 
+    shown line by line with SVG graphics.
 
     Most algorithms were copied from either [sortvis.org](http://sortvis.org) or 
     [Rosetta Code](http://rosettacode.org/wiki/Sorting_algorithms).
 
     You can view all the coffeescript code on [github](https://github.com/luckyllama/frankhadder.com/blob/master/assets/js/sorting.coffee). 
-    
+
 
 != js('sorting')

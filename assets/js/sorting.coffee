@@ -14,8 +14,8 @@
   class Bubblesort extends SortingAlgorithm
     log: []
     constructor: (initList) -> 
-      super(initList)
-      log = [initList]
+      @log = [initList]
+      super initList
     solve: ->
       list = @initList.slice()
       bound = list.length - 1
@@ -33,8 +33,8 @@
   class Mergesort extends SortingAlgorithm
     log: []
     constructor: (initList) ->
-      super(initList)
-      log = [initList]
+      @log = [initList]
+      super initList
     solve: ->
       list = @initList.slice()
       self = @
@@ -64,8 +64,8 @@
   class Quicksort extends SortingAlgorithm
     log: []
     constructor: (initList) ->
-      super(initList)
-      log = [initList]
+      @log = [initList]
+      super initList
     solve: ->
       list = @initList.slice()
       self = @
@@ -101,8 +101,8 @@
   class Heapsort extends SortingAlgorithm
     log: []
     constructor: (initList) ->
-      super(initList)
-      log = [initList]
+      @log = [initList]
+      super initList
     solve: ->
       list = @initList.slice()
       self = @
@@ -140,8 +140,8 @@
   class Insertionsort extends SortingAlgorithm
     log: []
     constructor: (initList) ->
-      super(initList)
-      log = [initList]
+      @log = [initList]
+      super initList
     solve: ->
       list = @initList.slice()
       length = list.length
@@ -157,8 +157,8 @@
   class Selectionsort extends SortingAlgorithm
     log: []
     constructor: (initList) ->
-      super(initList)
-      log = [initList]
+      @log = [initList]
+      super initList
     solve: ->
       list = @initList.slice()
       for i in [0..list.length - 1]
@@ -186,14 +186,15 @@
       self = @
       $(".controls .algorithm a", @$el).on "click", -> self.render algorithms[$(@).text()].log
       
-      @render algorithms[selectedAlgoritm].log
+      @render algorithms[selectedAlgoritm].log, initList
 
-    render: (logs) ->
+    render: (logs, initList) ->
       return if logs.length is 0 # nothing to see here, move along
 
       display = new SvgDisplay $(".visual", @$el), logs
-
+      $(".facts .init-list span", @$el).text initList.join() if initList?
       $(".facts .total-steps span", @$el).text logs.length
+
       return
 
   # The canvas display isn't currently used because it's easier to create onhover effects in svg.
