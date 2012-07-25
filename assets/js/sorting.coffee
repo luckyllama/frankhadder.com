@@ -182,12 +182,19 @@
         quicksort: new Quicksort(initList)
         selectionsort: new Selectionsort(initList)
       
-      selectedAlgoritm = $(".controls .algorithm a.active", @$el).text()
+      getSelectedAlgorithm = ->
+        activeLink = $(".controls .algorithm a.active:visible", @$el)
+        if activeLink.length > 0
+          return activeLink.text()
+        else 
+          return $(".controls .algorithm select", @$el).val()
+
       self = @
       $(".controls .algorithm a", @$el).on "click", -> self.render algorithms[$(@).text()].log
       $(".controls .algorithm select", @$el).on "change", -> self.render algorithms[$(@).attr("value")].log
+      $(window).on "resize", -> self.render algorithms[getSelectedAlgorithm()].log
       
-      @render algorithms[selectedAlgoritm].log, initList
+      @render algorithms[getSelectedAlgorithm()].log, initList
 
     render: (logs, initList) ->
       return if logs.length is 0 # nothing to see here, move along
