@@ -147,6 +147,7 @@ footer
         .stackoverflow span
             background-image url(/img/stackoverflow.png)
 
+/* landscape phones and down */
 @media (max-width: 480px) 
 
     .resume-simple
@@ -192,3 +193,9 @@ footer
             padding 10px
             .btn-group
                 display inline-block
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) 
+    footer 
+        .links
+            width 32%
