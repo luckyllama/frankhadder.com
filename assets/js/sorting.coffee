@@ -185,6 +185,7 @@
       selectedAlgoritm = $(".controls .algorithm a.active", @$el).text()
       self = @
       $(".controls .algorithm a", @$el).on "click", -> self.render algorithms[$(@).text()].log
+      $(".controls .algorithm select", @$el).on "change", -> self.render algorithms[$(@).attr("value")].log
       
       @render algorithms[selectedAlgoritm].log, initList
 

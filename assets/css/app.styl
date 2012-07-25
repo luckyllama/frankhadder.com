@@ -146,3 +146,45 @@ footer
             background-image url(/img/github.png)
         .stackoverflow span
             background-image url(/img/stackoverflow.png)
+
+@media (max-width: 480px) 
+
+    .resume-simple
+        h1 
+            line-height 1.2
+            span
+                display block
+        .job, .school
+            .where, .dates
+                line-height 1.3
+                margin .3em 0
+            .where
+                float none
+            .dates
+                float none
+
+    .sorting
+        .facts
+            .total-steps
+                float none
+            .current-array
+                float none
+                height 20px // make sure there's room in the layout 
+        .controls
+            select 
+                width 100%
+
+    footer 
+        margin 12px -20px 0
+        padding 0 20px
+
+        .copyright
+            float none
+            text-align center
+        .links
+            width 100%
+            float none
+            text-align center
+            padding 10px
+            .btn-group
+                display inline-block

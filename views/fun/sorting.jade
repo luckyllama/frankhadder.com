@@ -13,12 +13,19 @@
     .current-array
 
   .controls
-    .btn-group.algorithm(data-toggle="buttons-radio")
+    .btn-group.algorithm.hidden-phone(data-toggle="buttons-radio")
       a.btn.active bubblesort
       a.btn heapsort
       a.btn insertionsort
       a.btn selectionsort
       a.btn quicksort
+    .visible-phone.algorithm
+      select
+        option bubblesort
+        option heapsort
+        option insertionsort
+        option selectionsort
+        option quicksort
 
 .about
   :markdown
